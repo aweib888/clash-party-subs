@@ -146,7 +146,7 @@ rule-providers:
     type: http
 
 # ================= 分流规则（前置插入，优先级高于订阅自带规则） =================
-+rules:
+rules:
   - "RULE-SET,本地网络,DIRECT"
   - "RULE-SET,广告白名单,DIRECT"
   - "RULE-SET,广告过滤,广告拦截"

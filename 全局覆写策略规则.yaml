@@ -1,4 +1,4 @@
-# ================= 策略组配置（覆盖订阅原有代理组） =================
+# ================= 策略组配置（基于当前订阅全部节点，不依赖 proxy-providers） =================
 proxy-groups:
   - name: 节点选择
     type: select
@@ -24,38 +24,38 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 60
     lazy: true
-    use: *my_proxies
+    include-all: true
 
   - name: 故障转移
     type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 60
     lazy: true
-    use: *my_proxies
+    include-all: true
 
   - name: 自动选择
     type: url-test
     interval: 90
     tolerance: 50
-    use: *my_proxies
+    include-all: true
 
   - name: 手动切换
     type: select
-    use: *my_proxies
+    include-all: true
 
   - name: 专用节点
     filter: (?i)日本|川日|东京|深日|JP|Japan|香港|台湾
     type: url-test
     interval: 90
     tolerance: 50
-    use: *my_proxies
+    include-all: true
 
   - name: 其他节点
     exclude-filter: (?i)日本|川日|东京|深日|JP|Japan|香港|台湾
     type: url-test
     interval: 90
     tolerance: 50
-    use: *my_proxies
+    include-all: true
 
   - name: 广告拦截
     type: select

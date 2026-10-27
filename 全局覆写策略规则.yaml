@@ -4,7 +4,6 @@ rules:
   - "DOMAIN-SUFFIX,greasyfork.org,节点选择"
   - "DOMAIN-SUFFIX,google.com,DIRECT"
   - "DOMAIN-SUFFIX,baidu.com,DIRECT"
-  - "DOMAIN-KEYWORD,heck.ai,节点选择"
   # ================= 规则集分流 =================
   - "RULE-SET,本地网络,DIRECT"
   - "RULE-SET,广告白名单,DIRECT"

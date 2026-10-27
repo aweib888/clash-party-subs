@@ -2,7 +2,7 @@
 rules:
   # ================= 自定义常用网站（优先级最高，方便随时修改） =================
   - "DOMAIN-SUFFIX,greasyfork.org,节点选择"
-  - "DOMAIN-SUFFIX,google.com,DIRECT"
+  - "DOMAIN-SUFFIX,google.com,节点选择"
   - "DOMAIN-SUFFIX,baidu.com,DIRECT"
   # ================= 规则集分流 =================
   - "RULE-SET,本地网络,DIRECT"

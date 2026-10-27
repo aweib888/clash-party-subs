@@ -15,6 +15,7 @@ DOMAIN,avlabo.com
 IP-CIDR,103.194.184.5/8
 DOMAIN-KEYWORD,ikuuu
 DOMAIN-SUFFIX,aisearches.xyz
+DOMAIN-KEYWORD,heck.ai
 
 # GoogleCNProxyIP 谷歌中国服务 services.googleapis.cn
 IP-CIDR,120.232.181.162/32,no-resolve

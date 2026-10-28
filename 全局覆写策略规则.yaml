@@ -4,12 +4,15 @@ rules:
   - "DOMAIN-SUFFIX,greasyfork.org,节点选择"
   - "DOMAIN-SUFFIX,google.com,节点选择"
   - "DOMAIN-SUFFIX,baidu.com,DIRECT"
+  - "DOMAIN-SUFFIX,lastpass.com,DIRECT"
+  - "DOMAIN-SUFFIX,deepseek.com,DIRECT"
   # ================= 规则集分流 =================
   - "RULE-SET,本地网络,DIRECT"
   - "RULE-SET,广告白名单,DIRECT"
   - "RULE-SET,广告过滤,广告拦截"
   - "RULE-SET,应用广告,应用净化"
   - "RULE-SET,国内直连,DIRECT"
+  - "RULE-SET,直连IP,DIRECT"
   - "RULE-SET,专用代理,专用节点"
   - "RULE-SET,其他代理,其他节点"
   - "RULE-SET,通用代理,节点选择"
@@ -39,14 +42,14 @@ proxy-groups:
   - name: 负载均衡
     type: load-balance
     strategy: consistent-hashing
-    url: http://www.gstatic.com/generate_204
+    url: https://www.gstatic.com/generate_204
     interval: 60
     lazy: true
     include-all: true
 
   - name: 故障转移
     type: fallback
-    url: http://www.gstatic.com/generate_204
+    url: https://www.gstatic.com/generate_204
     interval: 60
     lazy: true
     include-all: true
@@ -159,6 +162,22 @@ rule-providers:
     url: https://ghproxy.net/https://raw.githubusercontent.com/aweib888/clash-party-subs/refs/heads/main/7-Gen-Proxy.list
     path: ./ruleset/通用代理.list
     behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  
+  直连IP:
+    url: https://ghproxy.net/https://raw.githubusercontent.com/aweib888/clash-party-subs/refs/heads/main/%E7%9B%B4%E8%BF%9EIP.list
+    path: ./ruleset/直连IP.list
+    behavior: ipcidr
+    interval: 86400
+    format: text
+    type: http
+
+  代理IP:
+    url: https://ghproxy.net/https://raw.githubusercontent.com/aweib888/clash-party-subs/refs/heads/main/%E4%BB%A3%E7%90%86IP.list
+    path: ./ruleset/代理IP.list
+    behavior: ipcidr
     interval: 86400
     format: text
     type: http

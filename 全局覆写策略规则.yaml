@@ -16,6 +16,7 @@ rules:
   - "RULE-SET,专用代理,专用节点"
   - "RULE-SET,其他代理,其他节点"
   - "RULE-SET,通用代理,节点选择"
+  - "RULE-SET,代理IP,节点选择"
   - "GEOIP,CN,DIRECT,no-resolve"
   - "MATCH,漏网之鱼"
 
@@ -167,7 +168,7 @@ rule-providers:
     type: http
   
   直连IP:
-    url: https://ghproxy.net/https://raw.githubusercontent.com/aweib888/clash-party-subs/refs/heads/main/%E7%9B%B4%E8%BF%9EIP.list
+    url: https://ghproxy.net/https://raw.githubusercontent.com/aweib888/clash-party-subs/refs/heads/main/9-DIRECT-IP.list
     path: ./ruleset/直连IP.list
     behavior: ipcidr
     interval: 86400
@@ -175,7 +176,7 @@ rule-providers:
     type: http
 
   代理IP:
-    url: https://ghproxy.net/https://raw.githubusercontent.com/aweib888/clash-party-subs/refs/heads/main/%E4%BB%A3%E7%90%86IP.list
+    url: https://ghproxy.net/https://raw.githubusercontent.com/aweib888/clash-party-subs/refs/heads/main/8-Gen-Proxy-IP.list
     path: ./ruleset/代理IP.list
     behavior: ipcidr
     interval: 86400

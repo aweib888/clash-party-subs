@@ -1,12 +1,34 @@
 # ================= 分流规则（前置插入，优先级高于订阅自带规则） =================
 rules:
   # ================= 自定义常用网站（优先级最高，方便随时修改） =================
+  # MyList代理列表
+  # DOMAIN-SUFFIX,google.com #匹配域名后缀
+  # DOMAIN-KEYWORD,google #匹配域名关键字
+  # DOMAIN,google.com #匹配域名
+  # IP-CIDR,127.0.0.0/8 #匹配数据目标IP
+  # SRC-IP-CIDR,192.168.1.201/32 #匹配数据发起IP
+  # DST-PORT,80 #匹配数据目标端口
+  # SRC-PORT,7777 #匹配数据源端口
   - "DOMAIN-SUFFIX,greasyfork.org,节点选择"
   - "DOMAIN-SUFFIX,google.com,节点选择"
+  - "DOMAIN-SUFFIX,bitwarden.com,节点选择"
+  - "DOMAIN-KEYWORD,良心云.com,节点选择"
   - "DOMAIN-SUFFIX,baidu.com,DIRECT"
   - "DOMAIN-SUFFIX,lastpass.com,DIRECT"
   - "DOMAIN-SUFFIX,deepseek.com,DIRECT"
+  - "DOMAIN-SUFFIX,windowsupdate.com,DIRECT"
+  - "DOMAIN-SUFFIX,qq.com,DIRECT"
+  - "DOMAIN-KEYWORD,jubt13.xyz,节点选择"
+  - "DOMAIN-KEYWORD,javcdn.cc,节点选择"
   - "DOMAIN-SUFFIX,datadoghq.com,DIRECT"
+  - "DOMAIN-KEYWORD,2hmwr.com,DIRECT"
+  - "DOMAIN-KEYWORD,pornhub.com,其他节点"
+  - "DOMAIN-KEYWORD,avlabo.com,节点选择"
+  - "DOMAIN-KEYWORD,lencr.org,DIRECT"
+  - "DOMAIN-KEYWORD,office.com,DIRECT"
+  - "DOMAIN-KEYWORD,ghproxy.net,DIRECT"
+  - "DOMAIN-KEYWORD,ocsps.ssl.com,DIRECT"
+  - "DOMAIN-KEYWORD,cdntrex.com,DIRECT"
   # ================= 规则集分流 =================
   - "RULE-SET,本地网络,DIRECT"
   - "RULE-SET,广告白名单,DIRECT"

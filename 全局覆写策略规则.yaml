@@ -29,6 +29,8 @@ rules:
   - "DOMAIN-KEYWORD,ghproxy.net,DIRECT"
   - "DOMAIN-KEYWORD,ocsps.ssl.com,DIRECT"
   - "DOMAIN-KEYWORD,cdntrex.com,DIRECT"
+  - "DOMAIN-KEYWORD,Cloudflare.com,其他节点"
+  - "DOMAIN-KEYWORD,freellm.net,节点选择"
   # ================= 规则集分流 =================
   - "RULE-SET,本地网络,DIRECT"
   - "RULE-SET,广告白名单,DIRECT"
@@ -83,20 +85,21 @@ proxy-groups:
     interval: 90
     tolerance: 50
     include-all: true
+    exclude-filter: (?i)剩余|套餐|官网|教程
 
   - name: 手动切换
     type: select
     include-all: true
 
   - name: 专用节点
-    filter: (?i)日本|川日|东京|深日|JP|Japan|香港|台湾
+    filter: (?i)日本|川日|东京|深日|JP|Japan
     type: url-test
     interval: 90
     tolerance: 50
     include-all: true
 
   - name: 其他节点
-    exclude-filter: (?i)日本|川日|东京|深日|JP|Japan|香港|台湾
+    exclude-filter: (?i)日本|川日|东京|深日|JP|Japan|剩余|套餐|官网|教程
     type: url-test
     interval: 90
     tolerance: 50
